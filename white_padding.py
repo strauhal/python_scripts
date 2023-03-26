@@ -1,14 +1,23 @@
+import os
 from PIL import Image
 
-# Open the image
-image = Image.open('input_image.jpg')
+input_folder = "fine_art"
+output_folder = "output_folder"
+padding_size = 1024
+color = (255, 255, 255)
 
-# Create a new image with the new width
-new_width = image.width + 1024
-new_image = Image.new('RGB', (new_width, image.height), (255, 255, 255))
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
-# Paste the original image onto the new image with a 1024 pixel offset
-new_image.paste(image, (1024, 0))
+for filename in os.listdir(input_folder):
+    if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
+        # Load the image
+        image = Image.open(os.path.join(input_folder, filename))
 
-# Save the new image
-new_image.save('output_image.jpg')
+        # Add padding to the left of the image
+        new_image = Image.new("RGB", (image.width + padding_size, image.height), color)
+        new_image.paste(image, (padding_size, 0))
+
+        # Save the modified image
+        new_filename = f"padded_{filename}"
+        new_image.save(os.path.join(output_folder, new_filename))

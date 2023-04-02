@@ -1,6 +1,6 @@
 import os
 
-directory = "resized_images"
+directory = "output_folder"
 
 # Iterate over the files in the directory
 for i, filename in enumerate(os.listdir(directory)):

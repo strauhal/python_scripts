@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # Set the input and output directories
-input_dir = "flowers/"
+input_dir = "squared_images/"
 output_dir = "output/"
 
 # Loop through each file in the input directory

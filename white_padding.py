@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-input_folder = "fine_art"
+input_folder = "output"
 output_folder = "output_folder"
 padding_size = 1024
 color = (255, 255, 255)

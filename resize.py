@@ -2,8 +2,8 @@ from PIL import Image
 import os
 
 # Set the input and output directories
-input_dir = "squared_images/"
-output_dir = "output/"
+input_dir = "images_to_change/"
+output_dir = "ready4testing"
 
 # Loop through each file in the input directory
 for filename in os.listdir(input_dir):
@@ -14,7 +14,7 @@ for filename in os.listdir(input_dir):
 
         
         # Resize the image to 512x512
-        img = img.resize((1024, 1024))
+        img = img.resize((2048, 2048))
         
         # Set the output filename to be the same as the input filename, but with a .jpg extension
         output_filename = os.path.splitext(filename)[0] + ".jpg"

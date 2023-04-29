@@ -14,9 +14,9 @@ for filename in os.listdir(input_folder):
         # Load the image
         image = Image.open(os.path.join(input_folder, filename))
 
-        # Add padding to the left of the image
+        # Add padding to the right of the image
         new_image = Image.new("RGB", (image.width + padding_size, image.height), color)
-        new_image.paste(image, (padding_size, 0))
+        new_image.paste(image, (0, 0))
 
         # Save the modified image
         new_filename = f"padded_{filename}"

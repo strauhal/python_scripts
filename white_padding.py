@@ -1,9 +1,9 @@
 import os
 from PIL import Image
 
-input_folder = "output"
-output_folder = "output_folder"
-padding_size = 1024
+input_folder = "ready4testing"
+output_folder = "padded"
+padding_size = 2048
 color = (255, 255, 255)
 
 if not os.path.exists(output_folder):
